@@ -1,0 +1,7 @@
+.pb-title{
+    color: limegreen;
+    display: inline-block;
+    border: 3px solid purple;
+    padding-left: 40px;
+    padding-right: 40px;
+}

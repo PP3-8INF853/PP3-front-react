@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './Components/Main/App';
 import reportWebVitals from './reportWebVitals';
+
+import Title from './Components/Top/Title'
+import LeftMenu from "./Components/Left/LeftMenu";
+import Credits from "./Components/Credits";
+import TopMenu from "./Components/Top/TopMenu"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <TopMenu />
+      <App />
+      <LeftMenu />
+      <Credits />
   </React.StrictMode>
 );
 

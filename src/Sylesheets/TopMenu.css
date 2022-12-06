@@ -1,0 +1,24 @@
+.top-menu{
+    background-color: lightgray;
+    position: absolute;
+    left: 30%;
+    right: 0;
+    top:0;
+    bottom: 85%;
+}
+
+.icon-list{
+    border: 3px solid blue;
+    display: inline-block;
+    position: absolute;
+    right: 20%;
+}
+
+.user-name{
+    display: inline-block;
+    position: absolute;
+    right: 3%;
+    top:30%;
+    padding: 5px;
+    border: 3px solid darkred;
+}
