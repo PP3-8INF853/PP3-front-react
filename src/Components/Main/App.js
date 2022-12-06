@@ -15,8 +15,8 @@ return(
         <div className={"transactions"}>
                 <Transactions />
                 <div className={"histories"}>
-                        <History />
-                        <History />
+                        <History date={"3 Octobre 2022"}/>
+                        <History date={"1 Octobre 2022"}/>
                 </div>
         </div>
     </div>

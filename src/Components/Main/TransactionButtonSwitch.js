@@ -1,10 +1,11 @@
 import "../../Sylesheets/TransactionButtonSwitch.css"
 
-function TransactionButtonSwitch(){
+function TransactionButtonSwitch(props){
+    const text= props.text;
     return(
         <div className={"transaction-button-switch"}>
             <button className={"tbs-button"}>
-                sample text
+                {text ?? "sample text"}
             </button>
 
         </div>
