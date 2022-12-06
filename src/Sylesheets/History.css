@@ -1,0 +1,7 @@
+.history{
+    border:3px solid blue;
+    height: 150px;
+    display: inline-block;
+    width: 80%;
+    padding:10px;
+}

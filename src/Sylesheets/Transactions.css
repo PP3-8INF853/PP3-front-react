@@ -1,0 +1,27 @@
+.transactions-menu{
+    border:1px solid purple;
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    height: 75px;
+    display: inline-block;
+}
+
+.hist-text{
+    position: absolute;
+    top:40%;
+    left:10%;
+    border:1px solid red;
+    padding:5px;
+}
+
+.hist-buttons{
+    border:2px solid blue;
+    position: absolute;
+    right: 10%;
+    top:20%;
+    width:400px;
+    height:50px;
+    text-align: center;
+}
