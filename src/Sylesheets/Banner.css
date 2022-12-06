@@ -1,0 +1,41 @@
+.banner{
+    border: 3px solid orangered;
+    padding:20px;
+    position: absolute;
+    top:25%;
+    bottom: 0;
+    left:5%;
+    right:5%;
+    background-color: limegreen;
+    color:white;
+}
+
+.banner-hello{
+    display: inline-block;
+    border:1px solid purple;
+    position:absolute;
+    padding:5px;
+    font-weight: bold;
+    top: 10%;
+    font-size: large;
+}
+
+.banner-quote{
+    display: inline-block;
+    border:1px solid purple;
+    position: absolute;
+    padding:5px;
+    bottom:10%;
+    font-style: italic;
+    font-size: small;
+}
+
+.banner-solde{
+    display: inline-block;
+    border:1px solid purple;
+    position: absolute;
+    right:5%;
+    padding:5px;
+    font-weight: bold;
+    font-size: larger;
+}

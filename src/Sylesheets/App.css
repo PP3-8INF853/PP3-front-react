@@ -14,6 +14,7 @@
     bottom: 75%;
     right: 0;
     left:0;
+    display: inline-block;
 }
 
 .transactions{
@@ -24,4 +25,15 @@
     top:25%;
     bottom:0;
     padding-bottom: 5%;
+}
+
+.banner-title{
+    border:1px solid red;
+    position: absolute;
+    top:0;
+    left:10%;
+    display: inline-block;
+    font-weight: bold;
+    font-size: large;
+    padding: 5px;
 }
