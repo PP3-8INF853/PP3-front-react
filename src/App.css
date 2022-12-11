@@ -22,6 +22,15 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: absolute;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  padding-bottom: 2%;
+
 }
 
 .App-link {
@@ -35,4 +44,113 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Rectangle 3 */
+.containerLogo{
+  overflow:visible;
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  margin: 0%;
+  border: 0%;
+  padding: 0%;
+  background: #010326;
+  mix-blend-mode: normal;
+  
+  
+}
+
+.logo-PrixBanque{
+ 
+  position: absolute;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 200%;
+  line-height: 100%;
+  text-align: center;
+  
+  color: #47A603;
+
+
+}
+
+.bouton-connection{
+  position: absolute;
+  width: 250px;
+  height: 68px;
+  left: 924px;
+  top: 746px;
+
+  background: #47A603;
+  border-radius: 10px;
+}
+
+.content {
+
+  text-align: center;
+  display: inline-block;
+  
+}
+
+.textePresentation{
+
+  position: absolute;
+  width: 30%;
+  height: 504px;
+  left: 2%;
+  top: 150px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: flex-start;
+  
+  color: #000000;
+  
+  mix-blend-mode: normal;
+}
+
+.rectangleAvert{
+
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  left: 40%;
+  top: 150px;
+  
+  background: #D9D9D9;
+  mix-blend-mode: normal;
+}
+
+
+.App-class{
+  box-sizing: border-box;
+
+position: relative;
+width: 100%;
+height: 100%;
+
+background: #FFFFFF;
+mix-blend-mode: screen;
+border: 1px solid #000000;
+}
+
+
+
+
+.bouton-connection{
+  position: absolute;
+  width: 50%;
+  height: 10%;
+  left: 20%;
+  top: 500px;
+}
+
+.boutonConnexionAdvert{
+  left: 40%;
 }
