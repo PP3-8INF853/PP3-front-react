@@ -2,7 +2,7 @@
 import {useNavigate} from 'react-router-dom';
 
 
-function BoutonConnexion()  {
+function BoutonSignUp()  {
 
   
     const navigate = useNavigate();
@@ -17,5 +17,5 @@ function BoutonConnexion()  {
 }
 
 
-export default BoutonConnexion;
+export default BoutonSignUp;
 

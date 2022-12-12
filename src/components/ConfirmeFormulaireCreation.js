@@ -1,21 +1,35 @@
 import React, {Component} from 'react';
-
+import axios from 'axios';
+import { TableRow } from '@mui/material';
 
 export class ConfirmeFormualaireCreation extends Component {
-    continue = e =>{
-        e.preventDefault();
+
+    continue = async (event) => {
+            
+        event.preventDefault();
+        const {values:{firstname, lastname, email, tel,login,mdp} }=this.props;
         this.props.nextStep();
-    }
+        axios.post(`http://localhost:3000/apiConnexionBDD`, { firstname,lastname,email,tel,login, mdp })
+          .then(res => {
+            console.log(res);
+            console.log(res.data);
+          })
+       
+      }
+    
+    
    back  = e =>{
         e.preventDefault();
         this.props.prevStep();
     }
+
+
     render(){
         const {values:{firstname, lastname, email, tel,login,mdp} }=this.props;
        
         return(
                 <React.Fragment>
-                    <form>
+                    <form className='formCreation' id='ConfirmationCreation' >
                     <ul>
                         <li>first Name:<br></br>{firstname}</li>
                         <li>second name:<br></br>{lastname}</li>
@@ -25,7 +39,7 @@ export class ConfirmeFormualaireCreation extends Component {
                         <li>password:<br></br>{mdp}</li>
 
                     </ul>  
-                    <button onClick={this.back} id="butonback4" type="button" >back</button><button onClick={this.continue} id="submitCreation" type="submit" >valider</button>
+                 <table> <tr><td><button onClick={this.back} id="butonback4" className='bouton-retour' type="button" >back</button></td><td><button  onClick={this.continue}  id="submitCreation" type="submit"  className="bouton-validation">valider</button></td></tr></table>
                     </form>
                 </React.Fragment>
         )

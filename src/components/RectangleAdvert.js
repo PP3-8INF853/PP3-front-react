@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import BoutonConnexion from './boutonconnection'
+import BoutonSignUpfrom from './BoutonSignUp'
 
 export default class ContenuRectangleAdvert extends Component {
     render() {
@@ -7,7 +7,7 @@ export default class ContenuRectangleAdvert extends Component {
        <div>
             <div   className='rectangleAvert'  >
                 <div className='boutonConnexionAdvert' >
-                     <  BoutonConnexion />
+                     <  BoutonSignUpfrom  />
                  </div>
             </div>
           

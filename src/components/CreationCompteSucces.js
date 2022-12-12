@@ -10,8 +10,10 @@ function CreationCompteSucces()  {
        
         return(
                 <React.Fragment>
-                    <p>Succès <br></br></p>
-                    <button type="button"  onClick={()=>navigate('/')} className="bouton-connection"> Accueil</button>
+                    <div   className='formCreation'>
+                        <p >Succès <br></br></p>
+                        <button type="button"  onClick={()=>navigate('/')} className="bouton-validation"> Accueil</button>
+                    </div>
                 </React.Fragment>
         )
     

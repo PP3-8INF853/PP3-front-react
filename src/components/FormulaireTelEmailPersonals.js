@@ -15,13 +15,13 @@ export class FormulaireTelEmailPersonnal extends Component {
        
         return(
                 <React.Fragment>
-                    <form>
-                        <label for="email">email</label><br></br>
+                    <form className='formCreation'>
+                        <label htmlFor="email">email</label><br></br>
                         <input type="email" onChange={handleChange('email')} id="email"></input>
                         <br></br>
-                        <label for="Sname">telephone</label><br></br>
+                        <label htmlFor="Sname">telephone</label><br></br>
                         <input type="text" onChange={handleChange('tel')} id="tel"></input><br></br>
-                        <button onClick={this.back} id="butonback2" type="button" >back</button><button onClick={this.continue} id="butoncontinue1" type="button" >continue</button>
+                        <table> <tr><td><button onClick={this.back} className='bouton-retour' type="button" >back</button></td><td><button  onClick={this.continue}   type="submit"  className="bouton-validation">valider</button></td></tr></table>
                     </form>
                 </React.Fragment>
         )

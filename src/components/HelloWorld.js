@@ -5,7 +5,7 @@ export default class HelloWorld extends Component {
 
      render() {
           return (
-            <div className="rectangleAvert" >
+            <div  >
               < FormulaireCreationCompte/>
             </div>
           )
