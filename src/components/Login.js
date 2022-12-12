@@ -15,8 +15,8 @@ export class Login extends Component{
     handleSubmit = async (event) => {
         console.log(this.state.login);
         event.preventDefault();
-        const {login }= this.state.login;
-        const {mdp }= this.state.mdp;
+        const login = this.state.login;
+        const mdp = this.state.mdp;
         axios.post(`http://localhost:3000/apiConnexionBDD`, { login, mdp })
           .then(res => {
             console.log(res);
