@@ -1,0 +1,18 @@
+#Register{
+    background-color: #47A603;
+    border-color: #47A603;
+}
+
+#tab-register{
+    background-color: #47A603;
+    border-color: #47A603;
+}
+
+#tab-login{
+    color:  #010326;;
+}
+
+.form-label{
+    font-family: 'Inter';
+    font-style: normal;
+}

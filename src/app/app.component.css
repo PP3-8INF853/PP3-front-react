@@ -32,7 +32,7 @@ p {
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: #1976d2;
+  background-color: #010326;
   color: white;
   font-weight: 600;
 }
@@ -118,7 +118,7 @@ svg.material-icons:not(:last-child) {
 }
 
 .card.highlight-card {
-  background-color: #1976d2;
+  background-color: #47A603;
   color: white;
   font-weight: 600;
   border: none;
@@ -149,12 +149,12 @@ svg#rocket-smoke {
 a,
 a:visited,
 a:hover {
-  color: #1976d2;
+  color:  #47A603;
   text-decoration: none;
 }
 
 a:hover {
-  color: #125699;
+  color:  #47A603;
 }
 
 .terminal {
@@ -207,7 +207,7 @@ a:hover {
 
 .circle-link:hover {
   transform: translateY(-0.25rem);
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 3px 15px #24b40e33;
 }
 
 footer {
@@ -285,4 +285,26 @@ svg#clouds {
     display: none;
     visibility: hidden;
   }
+}
+
+.logo-PrixBanque{
+ 
+  position: absolute;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 200%;
+  line-height: 100%;
+  text-align: center;
+  
+  color: #47A603;
+
+  background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+
+
 }
