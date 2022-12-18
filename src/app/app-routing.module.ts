@@ -16,6 +16,11 @@ const routes: Routes = [
       .then( module => module.RegisterLoginModule)
   },
   {
+    path: 'virements',
+    loadChildren: () => import(`./components/virement/virement.module`)
+      .then( module => module.VirementModule)
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'

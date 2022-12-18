@@ -1,0 +1,32 @@
+<h1 class="display-4">Effectuer un virement</h1>
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="virementForm" class="organization-form">
+
+    <div class="mb-3">
+      <label for="typeahead-basic1">Destinataire :</label>
+      <select [formControlName]="'destinataire'" aria-label="Default select example" class="form-select">
+        <option *ngFor="let customer of customers; let i = index" [ngValue]="customer">
+          {{customer?.firstname}} {{customer?.lastname}}
+        </option>
+      </select>
+    </div>
+
+      <div class="mb-3">
+        <label for="Montant">Montant :</label>
+        <input [formControlName]="'montant'" class="form-control" id="Montant" type="number"/>
+      </div>
+
+      <div class="mb-3">
+        <label for="Question">Question :</label>
+        <input [formControlName]="'question'" class="form-control" id="Question" type="text"/>
+      </div>
+
+      <div class="mb-3">
+        <label for="Reponse">Reponse :</label>
+        <input [formControlName]="'reponse'" class="form-control" id="Reponse" type="text"/>
+      </div>
+      <button (click)="onSubmit($event)" class="btn btn-lg btn-outline-primary d-flex p-2" type="submit">Envoyer      </button>
+    </form>
+  </div>
+</div>

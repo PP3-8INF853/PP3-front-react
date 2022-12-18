@@ -11,6 +11,10 @@ import {AuthGuard} from "./auth.guard";
 import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
+import { AddVirementComponent } from './components/virement/add-virement/add-virement.component';
+import { ListVirementComponent } from './components/virement/list-virement/list-virement.component';
+import {VirementModule} from "./components/virement/virement.module";
+import {MyDropdown} from "./shared/dropdown/my-dropdown";
 
 @NgModule({
   declarations: [
@@ -27,6 +31,8 @@ import {RouterModule} from "@angular/router";
     HttpClientModule,
     NgbModule,
     RegisterLoginModule,
+    VirementModule,
+    MyDropdown
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

@@ -1,3 +1,5 @@
+import { Account } from "./Account";
+
 export interface Customer  {
   id?: string,
   username?: string,
@@ -6,4 +8,5 @@ export interface Customer  {
   password?: string,
   email?: string,
   phoneNumber?: string,
+  account?: Account
 }

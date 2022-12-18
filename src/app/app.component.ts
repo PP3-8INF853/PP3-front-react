@@ -6,6 +6,7 @@ import {of} from "rxjs";
 import {CustomerLoginDTO} from "./modals/CustomerLoginDTO";
 import {Customer} from "./modals/Customer";
 import {CustomerService} from "./services/customer.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent implements OnInit{
   userInfo: Customer;
 
   constructor(public authService: AuthenticationService,
-  private customerService: CustomerService) {
+  private customerService: CustomerService, public router: Router) {
   }
 
    ngOnInit(): void {
@@ -32,5 +33,9 @@ export class AppComponent implements OnInit{
 
   disconnect(): void {
     this.authService.disconnect();
+  }
+
+  async redirectTo(eventInfo: { event: MouseEvent, route: string }) : Promise<void>{
+    await this.router.navigate([eventInfo.route]);
   }
 }
