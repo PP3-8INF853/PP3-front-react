@@ -1,7 +1,25 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Link} from 'react-router-dom'
+import {loginCustomer} from "../utils/session";
 
 function Home() {
+    useEffect(() => {
+        /*loginCustomer({username: "Celia", password: "9999"}).then((res) => {
+            console.log(res);
+        }).catch(err => console.log(err));*/
+
+        fetch("http://localhost:4444/authentication-service/customers/login", {
+            method: "POST",
+            body: JSON.stringify({username: "Celia", password: "9999"}),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        }).then(RES => {
+            console.log(RES);
+        }).catch(err => console.log(err));
+    });
+
   return (
       <div>
           
