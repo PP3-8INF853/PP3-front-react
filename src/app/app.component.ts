@@ -4,6 +4,8 @@ import {HttpClient} from "@angular/common/http";
 import {catchError} from "rxjs/operators";
 import {of} from "rxjs";
 import {CustomerLoginDTO} from "./modals/CustomerLoginDTO";
+import {Customer} from "./modals/Customer";
+import {CustomerService} from "./services/customer.service";
 
 @Component({
   selector: 'app-root',
@@ -12,28 +14,20 @@ import {CustomerLoginDTO} from "./modals/CustomerLoginDTO";
 })
 export class AppComponent implements OnInit{
   title = 'pp3-front-react';
+  userInfo: Customer;
 
-  constructor(public authService: AuthenticationService, private httpClient: HttpClient) {
+  constructor(public authService: AuthenticationService,
+  private customerService: CustomerService) {
   }
 
-  ngOnInit(): void {
-    /*this.httpClient.get("http://localhost:4444/authentication-service/customers").pipe(
-      catchError(error => {
-        return of(error);
-      })
-    ).subscribe({
-      next: (res) => console.log(res),
-      error: (err) => console.log(err)
+   ngOnInit(): void {
+    this.authService.userIsConnected.subscribe((value) => {
+      if (value){
+        this.customerService.findById(localStorage.getItem("userId")).subscribe(user => {
+          this.userInfo = user;
+        })
+      }
     })
-    this.httpClient.post("http://localhost:4444/authentication-service/customers/login",
-      JSON.stringify({username:"Celia", password:"9999"})).pipe(
-      catchError(error => {
-        return of(error);
-      })
-    ).subscribe({
-      next: (res) => console.log(res),
-      error: (err) => console.log(err)
-    })*/
   }
 
   disconnect(): void {

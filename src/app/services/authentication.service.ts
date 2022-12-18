@@ -6,6 +6,7 @@ import {BehaviorSubject, Observable} from "rxjs";
 import {map, tap} from "rxjs/operators";
 import {CustomerSignUpDTO} from "../modals/CustomerSignUpDTO";
 import { Router } from '@angular/router';
+import {Customer} from "../modals/Customer";
 
 @Injectable({
   providedIn: 'root'
