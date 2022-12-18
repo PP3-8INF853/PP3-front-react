@@ -1,14 +1,10 @@
-FROM node:13.12.0-alpine as build
-WORKDIR .
-ENV PATH node_modules/.bin:$PATH
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install --silent
-RUN npm install react-scripts@3.4.1 -g --silent
+FROM node:18.12.1 AS build
+WORKDIR /usr/src/app
+COPY package.json package-lock.json ./
 COPY . .
-RUN npm run build
+RUN npm config set legacy-peer-deps true
+RUN npm install && node_modules/.bin/ng build --configuration production
 
-# production environment
-FROM nginx:stable-alpine
-COPY --from=build ./build /usr/share/nginx/html
+FROM nginx:latest
 COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /usr/src/app/dist/poa-front-end /usr/share/nginx/html/

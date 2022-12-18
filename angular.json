@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pp3-front-react"
+    }
+  },
+  "defaultProject": "pp3-front-react",
+  "cli": {
+    "analytics": "648a4421-bdd2-43c8-8eaa-614c57f0d9c3"
+  }
 }
