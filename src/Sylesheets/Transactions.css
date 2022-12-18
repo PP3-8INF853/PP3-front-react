@@ -1,5 +1,5 @@
 .transactions-menu{
-    border:1px solid purple;
+    /*border:1px solid purple;*/
     position: absolute;
     left:0;
     right:0;
@@ -12,12 +12,12 @@
     position: absolute;
     top:40%;
     left:10%;
-    border:1px solid red;
+    /*border:1px solid red;*/
     padding:5px;
 }
 
 .hist-buttons{
-    border:2px solid blue;
+    /*border:2px solid blue;*/
     position: absolute;
     right: 10%;
     top:20%;

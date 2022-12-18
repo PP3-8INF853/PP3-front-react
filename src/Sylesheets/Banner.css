@@ -1,5 +1,5 @@
 .banner{
-    border: 3px solid orangered;
+    /*border: 3px solid orangered;*/
     padding:20px;
     position: absolute;
     top:25%;
@@ -12,7 +12,7 @@
 
 .banner-hello{
     display: inline-block;
-    border:1px solid purple;
+    /*border:1px solid purple;*/
     position:absolute;
     padding:5px;
     font-weight: bold;
@@ -22,7 +22,7 @@
 
 .banner-quote{
     display: inline-block;
-    border:1px solid purple;
+    /*border:1px solid purple;*/
     position: absolute;
     padding:5px;
     bottom:10%;
@@ -32,7 +32,7 @@
 
 .banner-solde{
     display: inline-block;
-    border:1px solid purple;
+    /*border:1px solid purple;*/
     position: absolute;
     right:5%;
     padding:5px;

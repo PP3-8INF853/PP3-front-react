@@ -1,12 +1,12 @@
 .nav-button{
-    border:3px solid lightseagreen;
+    /*border:3px solid lightseagreen;*/
     padding: 5px;
     display: inline-block;
 
 }
 
 .nav-button-selected{
-    border:3px solid greenyellow;
+    /*border:3px solid greenyellow;*/
     padding: 5px;
     display: inline-block;
 }
@@ -24,7 +24,7 @@
     border-radius: 10px;
     text-align: left;
     font-weight: bold;
-    border:1px solid red;
+    /*border:1px solid red;*/
     display: inline-block;
 }
 
@@ -37,13 +37,13 @@
     border-radius: 10px;
     text-align: left;
     font-weight: bold;
-    border:1px solid darkred;
+    /*border:1px solid darkred;*/
     display: inline-block;
 }
 
 .icon-left{
     display: inline-block;
-    border:1px solid red;
+    /*border:1px solid red;*/
     width:30px;
     height: 30px;
 }
