@@ -18,7 +18,8 @@ const routes: Routes = [
   {
     path: 'virements',
     loadChildren: () => import(`./components/virement/virement.module`)
-      .then( module => module.VirementModule)
+      .then( module => module.VirementModule),
+    canActivate: [AuthGuard]
   },
   {
     path: '**',

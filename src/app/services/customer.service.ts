@@ -14,7 +14,7 @@ export class CustomerService {
   connectedUser: BehaviorSubject<Customer> = new BehaviorSubject<Customer>(undefined);
 
   constructor(private http: HttpClient) {
-    this.findById(localStorage.getItem("userId"), true).subscribe(customer => {
+    this.findById(localStorage?.getItem("userId"), true).subscribe(customer => {
       this.connectedUser.next(customer);
     });
   }
