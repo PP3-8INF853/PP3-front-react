@@ -1,0 +1,47 @@
+.app{
+    background-color: lightgreen;
+    position: absolute;
+    top:15%;
+    left:30%;
+    right: 0;
+    bottom: 0;
+}
+
+.solde{
+    border: 3px solid darkblue;
+    position: absolute;
+    top:0;
+    bottom: 75%;
+    right: 0;
+    left:0;
+    display: inline-block;
+}
+
+.transactions{
+    border: 3px solid pink;
+    position: absolute;
+    left:0;
+    right:0;
+    top:25%;
+    bottom:0;
+    padding-bottom: 5%;
+}
+
+.banner-title{
+    border:1px solid red;
+    position: absolute;
+    top:0;
+    left:10%;
+    display: inline-block;
+    font-weight: bold;
+    font-size: large;
+    padding: 5px;
+}
+
+.histories{
+    position: absolute;
+    top:85px;
+    right:0;
+    left:0;
+    text-align: center;
+}

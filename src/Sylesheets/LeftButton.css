@@ -1,0 +1,23 @@
+.left-button{
+    display: inline-block;
+    width:max-content;
+    height: max-content;
+    border: 3px solid purple;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.left-button-form{
+    width: max-content;
+}
+
+.left-button-input{
+    background-color: forestgreen;
+    color: white;
+    width: 250px;
+    height: 40px;
+    font-size: large;
+    border-radius: 10px;
+}
+
