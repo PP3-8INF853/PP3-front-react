@@ -22,7 +22,9 @@ export class MyDropdown implements OnInit {
   ngOnInit(): void {
     this.buttonNames = this.native.nativeElement.getAttributeNames()
       .map(attribute => this.native.nativeElement.getAttribute(attribute))
-      .filter(attribute => !attribute.includes("_ngcontent") && !attribute.includes(this.name));
+      .filter(attribute => !attribute.includes("_ngcontent")
+        && !attribute.includes(this.name)
+        && !attribute.includes("margin-left: 130px"));
 
     if (this.buttonNames.length === 1) {
       this.isTypeOfDropdown = !this.isTypeOfDropdown;
