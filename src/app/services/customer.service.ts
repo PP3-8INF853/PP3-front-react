@@ -36,7 +36,7 @@ export class CustomerService {
     );
   }
 
-  public findById(id: string, withAccountInfo = false): Observable<Customer | undefined | null>{
+  public findById(id: string, withAccountInfo = false): Observable<Customer>{
     return this.http.get<Customer>(this.url + "/findById/" + id).pipe(
       switchMap((customer) => this.findCustomerAccount(customer.id).pipe(
         map(account => {

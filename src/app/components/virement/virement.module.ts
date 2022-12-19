@@ -5,14 +5,16 @@ import {AddVirementComponent} from "./add-virement/add-virement.component";
 import {ListVirementComponent} from "./list-virement/list-virement.component";
 import {VirementRouting} from "./virement.routing";
 import {NgForOf} from "@angular/common";
+import {MyTable} from "../../shared/table/my-table";
 
 
 @NgModule({
-  imports: [
-    VirementRouting,
-    ReactiveFormsModule,
-    NgForOf
-  ],
+    imports: [
+        VirementRouting,
+        ReactiveFormsModule,
+        NgForOf,
+        MyTable
+    ],
   declarations: [
     AddVirementComponent,
     ListVirementComponent

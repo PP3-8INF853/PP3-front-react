@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<table class="table table-striped">
+  <thead>
+  <tr *ngIf="type === 'VirementSendDAO'">
+    <th scope="col">#</th>
+    <th scope="col">Nom Destinataire</th>
+    <th scope="col">Prenom Destinataire</th>
+    <th scope="col">Montant</th>
+    <th scope="col">Status</th>
+    <th scope="col">Date d'envoi</th>
+    <th scope="col">Date de reception</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let attr of data; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <!-- VirementSendDAO -->
+    <td *ngIf="type === 'VirementSendDAO'">{{ customerSet[i]?.lastname }}</td>
+    <td *ngIf="type === 'VirementSendDAO'">{{ customerSet[i]?.firstname }}</td>
+    <td *ngIf="type === 'VirementSendDAO'">{{ attr?.montant }}</td>
+    <td *ngIf="type === 'VirementSendDAO'">{{ attr?.statut }} </td>
+    <td *ngIf="type === 'VirementSendDAO'">{{ convertIntoDateString( attr?.dateEnvoi) }}</td>
+    <td *ngIf="type === 'VirementSendDAO' && attr.dateReception ">{{ convertIntoDateString( attr?.dateReception) }}</td>
+  </tr>
+  </tbody>
+</table>

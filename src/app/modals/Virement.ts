@@ -1,15 +1,15 @@
 import { Account } from "./Account"
 
-export type Virement = {
+export interface Virement  {
   id?: string,
   montant?: number,
-  status?: string,
+  statut?: string,
   question?: string,
   reponse?: string,
-  idEmeteur?: string,
-  idRecepteur?: string,
-  emetteur?: Account,
-  recepteur?: Account,
+  idCompteEmetteur?: string,
+  idCompteRecepteur?: string,
+  compteEmetteur?: Account,
+  compteRecepteur?: Account,
   dateEnvoi?: Date,
   dateReception?: Date
 }

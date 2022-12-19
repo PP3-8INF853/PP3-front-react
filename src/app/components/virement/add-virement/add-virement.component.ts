@@ -49,19 +49,22 @@ export class AddVirementComponent implements OnInit {
       montant : parseFloat(this.virementForm.get('montant').value),
       question: this.virementForm.get('question').value,
       reponse: this.virementForm.get('reponse').value,
-      numCompteRecepteur: this.destinataireCustomer.account.id,
-      numCompteEmetteur: this.emmeteurCustomer.account.id
+      numCompteRecepteur: this.destinataireCustomer.account.numero,
+      numCompteEmetteur: this.emmeteurCustomer.account.numero
     } as VirementSendDTO;
 
     console.log(virementDTO);
 
     if (virementDTO.montant <= parseInt(this.emmeteurCustomer.account.solde)){
       this.transactionService.sendMoney(virementDTO).subscribe({
-        next: message => {
-          alert(message);
+        next: (message: {message: string}) => {
+          alert(message.message);
           this.virementForm.reset();
         },
-        error: err => alert("Une erreur s'est produite")
+        error: err => {
+          alert("Une erreur s'est produite")
+          console.log(err)
+        }
       });
     } else
       alert("Solde insuffisant pour effectuer le virement")

@@ -13,7 +13,7 @@
   </my-dropdown>&nbsp;&nbsp;&nbsp;&nbsp;
   <div class="spacer"></div>
   <span style="margin-right: 30px" *ngIf="this.authService.isAuthenticated()" >Bonjour {{userInfo?.firstname}}</span>
-  <button *ngIf="this.authService.isAuthenticated()" (click)="disconnect()" aria-label="Angular on twitter" class="btn btn-danger btn-block mb-4"  title="disconnect">
+  <button style="margin-top: 25px" *ngIf="this.authService.isAuthenticated()" (click)="disconnect()" aria-label="Angular on twitter" class="btn btn-danger btn-block mb-4"  title="disconnect">
       Log Out
     </button>
 </div>
