@@ -16,6 +16,7 @@ import { ListVirementComponent } from './components/virement/list-virement/list-
 import {VirementModule} from "./components/virement/virement.module";
 import {MyDropdown} from "./shared/dropdown/my-dropdown";
 import {MyTable} from "./shared/table/my-table";
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -33,8 +34,7 @@ import {MyTable} from "./shared/table/my-table";
         NgbModule,
         RegisterLoginModule,
         VirementModule,
-        MyDropdown,
-        MyTable
+        SharedModule
     ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

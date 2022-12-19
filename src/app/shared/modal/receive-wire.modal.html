@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Accepter / Refuser le virement</h4>
+  </div>
+  <div class="card-body">
+    Montant : {{virement.montant}}
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form2Example1">Question :</label>
+      <input [disabled]="true" [value]="virement.question" class="form-control" id="form2Example1" type="text"/>
+    </div>
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form2Example2">Reponse :</label>
+      <input [formControl]="response" class="form-control" id="form2Example2" type="text"/>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-danger" (click)="refuser()">Refuser</button>
+    <button type="button" class="btn btn-outline-success" (click)="accept()">Accepter</button>
+  </div>
+</div>

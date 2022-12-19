@@ -8,6 +8,7 @@ import {concatMap, map, mergeMap, switchMap, toArray} from "rxjs/operators";
 import {Virement} from "../modals/Virement";
 import {CustomerService} from "./customer.service";
 import {Customer} from "../modals/Customer";
+import {VirementReceiveDTO} from "../modals/VirementReceiveDTO";
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,11 @@ export class TransactionService {
 
   public sendMoney(virement: VirementSendDTO): Observable<{message: string}>{
     return this.http.post<{message: string}>(this.url + "/send", JSON.stringify(virement)).pipe();
+  }
+
+  public acceptWireTransfer(idVirment:string, response: VirementReceiveDTO): Observable<{message : string}>{
+    return this.http.post<{message : string}>(this.url + "/receive/" + idVirment, JSON.stringify(response))
+      .pipe()
   }
 
   public getVirementListByCustomerAccountId(accountId: string): Observable<VirementSendDAO[]>{

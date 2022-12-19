@@ -19,6 +19,7 @@ export class MyTable<T extends Virement | VirementSendDAO | BankStatement> imple
   type: string;
   customerSet: Customer[] = [];
   bankStatement: BankStatement[] = [];
+  @Output() actionClicked = new EventEmitter();
 
   constructor(private router: Router, public customerService: CustomerService) {
   }
@@ -67,5 +68,9 @@ export class MyTable<T extends Virement | VirementSendDAO | BankStatement> imple
       return "Reception"
     }
     return "Envoi"
+  }
+
+  onActionClicked(attr: T extends Virement ? Virement : (T extends VirementSendDAO ? VirementSendDAO : (T extends BankStatement ? BankStatement : unknown))) {
+    this.actionClicked.emit(attr as Virement);
   }
 }
