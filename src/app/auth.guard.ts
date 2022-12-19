@@ -18,7 +18,10 @@ export class AuthGuard implements CanActivate {
     this.authService.userIsConnected.subscribe(value => {
       if (value === false){
         this.router.navigate(['auth/login'])
-          .then(r => console.log(r))
+          .then(r => {
+            console.log(r)
+            window.location.reload();
+          })
           .catch(err => console.error(err));
         return false;
       }

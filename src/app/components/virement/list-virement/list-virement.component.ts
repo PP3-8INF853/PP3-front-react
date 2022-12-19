@@ -17,7 +17,7 @@ export class ListVirementComponent implements OnInit {
     this.customerService.connectedUser.subscribe(customer => {
       if (customer !== undefined){
         this.transactionService.getVirementListByCustomerAccountId(customer.account.id).subscribe((virements) => {
-          this.virements = virements;
+          this.virements = virements.filter(virement => virement.destinataireCustomer !== this.customerService.connectedUser.value.id);
           console.log(this.virements);
         });
       }

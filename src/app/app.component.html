@@ -1,6 +1,6 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <span class="logo-PrixBanque">PrixBanque</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span (click)="redirectTo({event: $event, route: ''})"  class="logo-PrixBanque">PrixBanque</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
   <my-dropdown style="margin-left: 130px" *ngIf="this.authService.isAuthenticated()"
                (action)="redirectTo($event)"

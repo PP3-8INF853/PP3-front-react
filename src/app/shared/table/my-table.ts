@@ -6,6 +6,7 @@ import {DataPageGenericType} from "../../modals/DataPageGenericType";
 import {VirementSendDAO} from "../../modals/VirementSendDAO";
 import { CustomerService } from 'src/app/services/customer.service';
 import {Customer} from "../../modals/Customer";
+import {BankStatement} from "../../modals/BankStatement";
 
 @Component({
   selector: 'my-table',
@@ -13,10 +14,11 @@ import {Customer} from "../../modals/Customer";
   imports: [NgFor, DecimalPipe, NgIf, NgForOf, AsyncPipe, DatePipe],
   templateUrl: './my-table.html',
 })
-export class MyTable<T extends Virement | VirementSendDAO> implements OnChanges, OnInit {
+export class MyTable<T extends Virement | VirementSendDAO | BankStatement> implements OnChanges, OnInit {
   @Input() data: DataPageGenericType<T>[];
   type: string;
   customerSet: Customer[] = [];
+  bankStatement: BankStatement[] = [];
 
   constructor(private router: Router, public customerService: CustomerService) {
   }
@@ -29,6 +31,9 @@ export class MyTable<T extends Virement | VirementSendDAO> implements OnChanges,
       if ((this.data[0] as VirementSendDAO).destinataireCustomer !== undefined) {
         this.type = 'VirementSendDAO';
         this.getCustomerInfos();
+      } else if ((this.data[0] as BankStatement).compte !== undefined) {
+        this.type = 'BankStatement';
+        this.bankStatement = this.data as BankStatement[];
       }
       else if ((this.data[0] as Virement).dateEnvoi !== undefined) {
         this.type = 'Virement';
@@ -45,11 +50,22 @@ export class MyTable<T extends Virement | VirementSendDAO> implements OnChanges,
   }
 
   getCustomerInfos(){
-    (this.data as VirementSendDAO[]).forEach( async donnee => {
-      this.customerService.findById((donnee.destinataireCustomer as string)).subscribe((value) => {
+    (this.data as VirementSendDAO[]).forEach( async (donnee) => {
+      this.customerService.findById((donnee?.destinataireCustomer as string)).subscribe((value) => {
         this.customerSet.push(value);
         console.log(value)
       });
     })
+  }
+
+  checkState(attr: Virement) {
+    if (
+      attr.compteRecepteur.userId === this.customerService.connectedUser.value.id
+      &&
+      attr.compteEmetteur.userId !== this.customerService.connectedUser.value.id
+    ){
+      return "Reception"
+    }
+    return "Envoi"
   }
 }

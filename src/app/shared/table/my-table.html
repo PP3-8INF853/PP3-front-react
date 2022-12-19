@@ -9,9 +9,19 @@
     <th scope="col">Date d'envoi</th>
     <th scope="col">Date de reception</th>
   </tr>
+  <tr *ngIf="type === 'BankStatement'">
+    <th scope="col">#</th>
+    <th scope="col">Compte</th>
+    <th scope="col">Type Virement</th>
+    <th scope="col">Somme</th>
+    <th scope="col">Status</th>
+    <th scope="col">Date d"envoi</th>
+    <th scope="col">Période debut</th>
+    <th scope="col">Période fin</th>
+  </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let attr of data; index as i">
+  <tr *ngFor="let attr of (bankStatement.length === 0 ? data : bankStatement[0].virements); index as i">
     <th scope="row">{{ i + 1 }}</th>
     <!-- VirementSendDAO -->
     <td *ngIf="type === 'VirementSendDAO'">{{ customerSet[i]?.lastname }}</td>
@@ -20,6 +30,14 @@
     <td *ngIf="type === 'VirementSendDAO'">{{ attr?.statut }} </td>
     <td *ngIf="type === 'VirementSendDAO'">{{ convertIntoDateString( attr?.dateEnvoi) }}</td>
     <td *ngIf="type === 'VirementSendDAO' && attr.dateReception ">{{ convertIntoDateString( attr?.dateReception) }}</td>
+
+    <!-- BankStatement -->
+    <td *ngIf="type === 'BankStatement'">{{ this.customerService.connectedUser.value.account.numero }}</td>
+    <td *ngIf="type === 'BankStatement'">{{ checkState(attr) }}</td>
+    <td *ngIf="type === 'BankStatement'">{{ attr?.montant }}</td>
+    <td *ngIf="type === 'BankStatement'">{{ attr?.statut }} </td>
+    <td *ngIf="type === 'BankStatement'">{{ convertIntoDateString( attr?.dateEnvoi) }}</td>
+    <td *ngIf="type === 'BankStatement' && attr.dateReception ">{{ convertIntoDateString( attr?.dateReception) }}</td>
   </tr>
   </tbody>
 </table>

@@ -15,25 +15,27 @@ import { AddVirementComponent } from './components/virement/add-virement/add-vir
 import { ListVirementComponent } from './components/virement/list-virement/list-virement.component';
 import {VirementModule} from "./components/virement/virement.module";
 import {MyDropdown} from "./shared/dropdown/my-dropdown";
+import {MyTable} from "./shared/table/my-table";
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
   ],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    ReactiveFormsModule,
-    FormsModule,
-    RouterModule,
-    AppRoutingModule,
-    HttpClientModule,
-    NgbModule,
-    RegisterLoginModule,
-    VirementModule,
-    MyDropdown
-  ],
+    imports: [
+        CommonModule,
+        BrowserModule,
+        ReactiveFormsModule,
+        FormsModule,
+        RouterModule,
+        AppRoutingModule,
+        HttpClientModule,
+        NgbModule,
+        RegisterLoginModule,
+        VirementModule,
+        MyDropdown,
+        MyTable
+    ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
 })

@@ -17,6 +17,10 @@ export class TransactionService {
 
   constructor(private http: HttpClient, private customerService: CustomerService) {}
 
+  public getAllTransactions(): Observable<Virement[]>{
+    return this.http.get<Virement[]>(this.url + "/getAll").pipe();
+  }
+
   public sendMoney(virement: VirementSendDTO): Observable<{message: string}>{
     return this.http.post<{message: string}>(this.url + "/send", JSON.stringify(virement)).pipe();
   }

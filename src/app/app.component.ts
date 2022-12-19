@@ -33,6 +33,7 @@ export class AppComponent implements OnInit{
 
   disconnect(): void {
     this.authService.disconnect();
+    window.location.reload();
   }
 
   async redirectTo(eventInfo: { event: MouseEvent, route: string }) : Promise<void>{

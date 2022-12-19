@@ -1,2 +1,5 @@
 <h1 class="display-4">Numero de compte : {{this.customerAccount?.numero}}</h1>
 <h1 class="display-4">Solde :  {{this.customerAccount?.solde}}</h1>
+
+<h1 class="display-4">Relevés de compte</h1>
+<my-table [data]="statements"></my-table>
