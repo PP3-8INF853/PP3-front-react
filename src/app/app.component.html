@@ -1,0 +1,23 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <span (click)="redirectTo({event: $event, route: ''})"  class="logo-PrixBanque">PrixBanque</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <my-dropdown style="margin-left: 130px" *ngIf="this.authService.isAuthenticated()"
+               (action)="redirectTo($event)"
+               [name]="'Accueil'">
+  </my-dropdown>&nbsp;&nbsp;&nbsp;&nbsp;
+  <my-dropdown *ngIf="this.authService.isAuthenticated()" (action)="redirectTo($event)"
+               [name]="'Virements'"
+               action1="Effectuer un virement"
+               action2="Voir la liste des virements">
+  </my-dropdown>&nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="spacer"></div>
+  <span style="margin-right: 30px" *ngIf="this.authService.isAuthenticated()" >Bonjour {{userInfo?.firstname}}</span>
+  <button style="margin-top: 25px" *ngIf="this.authService.isAuthenticated()" (click)="disconnect()" aria-label="Angular on twitter" class="btn btn-danger btn-block mb-4"  title="disconnect">
+      Log Out
+    </button>
+</div>
+
+<div class="content" role="main">
+  <router-outlet></router-outlet>
+</div>

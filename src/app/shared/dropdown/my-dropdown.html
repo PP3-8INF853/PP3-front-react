@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col">
+    <div class="d-inline-block" ngbDropdown>
+      <button *ngIf="isTypeOfDropdown" [ngClass]="'btn btn-outline-light'" id="dropdownBasic1" ngbDropdownToggle
+              type="button">
+        {{name}}
+      </button>
+      <button (click)="emitClickedEvent($event, name)" *ngIf="!isTypeOfDropdown" [ngClass]="'btn btn-outline-light'"
+              id="dropdownBasic2" type="button">
+        {{name}}
+      </button>
+      <div aria-labelledby="dropdownBasic1" ngbDropdownMenu>
+        <button (click)="emitClickedEvent($event, name)" *ngFor="let name of buttonNames; let i = index"
+                ngbDropdownItem>
+          {{name}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
